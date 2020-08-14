@@ -49,4 +49,5 @@ int main()
 	cout<<ans;
 }
 
-Here we are keeping track of the max number seen so far. Remember that the array elements are being increased to the current max.
+Here we are keeping track of the max number seen so far. Remember that the array elements are being increased to the current max. And so the number of steps
+to reach that max value is equal to the (max - input number)
