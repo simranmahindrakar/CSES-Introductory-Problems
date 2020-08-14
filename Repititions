@@ -1,0 +1,33 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std; 
+int main()
+{
+	string s;
+	cin>>s;
+	char ch = 'A';
+	int ans=1;               //the smallest possbile ans =1
+	int count =0;
+	for(char c : s)
+	{
+		if(c==ch)
+		{
+			count++;
+			ans = max(count, ans);
+		}
+		else {
+			ch = c;
+			count = 1; // reset count
+		}
+	}
+	cout<<ans;
+}
+
+Declare string s and save the input string in s.
+Declare an initialise char ch to any character in the DNA sequence. I choose 'A'
+int ans = 1 because in the worst case the size of the largest valid subset will be atleast 1.
+We maintain a counter variable to compare with the current ans
+Now, for  current char c in the string s, if c == 'A' we increase counter by one and update the ans to max of (count, ans)
+else
+we update the ch value to the current char c and set count to 1 so we can start counting a fresh subsequence
+ans will always contain the length of the largest repeating subsequence
